@@ -2,29 +2,29 @@
 
 int main(){
 	
-	
-	int number;
-	printf("Ingrese un numero para saber si es primo: ");
-	scanf(" %d ", &number);
+	int n,i,flag=0;
+	printf("Ingrese un numero: ");
+	scanf("%d",&n);
 	
 
-    if (number <= 1){
-    	printf("   No es primo ");
+    if (n==0 || n==1){
+    	flag=1;
 	}
-    else if (number == 2){
-    	printf(" es primo ");
-	}
-    else if (number % 2 == 0){
-    	printf(" No es primo ");
-	}
-       int i;    
-    for (i = 3; i <= number; i++);
-        if (number % i == 0){
-        	printf(" No es primo ");
+	for(i=2;i<=n/2;i++){
+		if(n%i==0){
+			flag=1;
+			break;
 		}
-            
-    
-    return 0;        
-}
+	}
+	if(flag==0){
+		printf("%d es un numero primo\n", n);
+	}
+	else{
+		printf("%d no es un numero primo\n",n);
+	}
+	return 0;
+	}
+           
+
 
 
